@@ -30,7 +30,7 @@
                 axios.get('api/items')
                 .then(response=>{
                     this.items=response.data;
-                    console.log('from methods',this.items)
+                    console.log('from methods App',this.items)
                 })
                 .catch(error=>{
                     console.log(error)
@@ -41,7 +41,7 @@
         },
         created() {
             this.getlist();
-            console.log('from created',this.items);
+            console.log('from created App',this.items);
         }
     }
 </script>

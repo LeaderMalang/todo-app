@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-for="{item,index} in items" :key="index" >
+        <div v-for="item in items" :key="item.id" >
             <list-item
             :item="item"
             class="item"
@@ -16,6 +16,9 @@
         props:['items'],
         components:{
             listItem
+        },
+        mounted() {
+            console.log('from created list view',this.items);
         }
     }
 </script>

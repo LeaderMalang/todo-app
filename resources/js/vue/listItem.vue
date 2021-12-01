@@ -13,6 +13,7 @@
 </template>
 
 <script>
+//v-model="item.completed"
     export default {
         props:['item'],
         methods:{
@@ -30,7 +31,7 @@
                 })
             },
             removeItem(){
-                axios.delete('api/item'+this.item.id)
+                axios.delete('api/item/'+this.item.id)
                 .then(response=>{
                     if(response.status==200){
                         this.$emit('itemchanged')
@@ -42,7 +43,7 @@
             }
         },
         created() {
-            console.log(this.item)
+            console.log('From Created of List Item',this.item)
         }
     }
 </script>
